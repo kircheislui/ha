@@ -1,7 +1,7 @@
 - hosts: all
   vars:
-    name: redhat
+    ha-name: redhat
   tasks:
   - ping:
   - debug:
-      msg: "{{ name }}"
+      msg: "{{ ha-name }}"
