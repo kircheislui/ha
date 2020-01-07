@@ -1,4 +1,4 @@
 - hosts: all
   become: yes
   roles:
-    - role: demo_vault
+    - demo_vault
