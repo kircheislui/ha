@@ -1,7 +1,7 @@
 - hosts: webserver
   become: yes
   vars:
-    demovar: redhat  
+    demovar: redhat
   tasks: 
   - name: Config a file
     lineinfile:
@@ -10,4 +10,4 @@
       create: yes
     
   - name: run command
-    command: ls -la /tmp > /tmp/testtmp.txt 
+    command: echo {{ demovar }} > /tmp/testtmp.txt 
