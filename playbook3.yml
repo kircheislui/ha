@@ -1,7 +1,7 @@
 - hosts: all
   become: yes
   vars_files:
-    - vars/vars.yml
-    - vars/vault.yml
+    - "{{role_path}}/vars/vars.yml"
+    - "{{role_path}}/vars/vault.yml"
   roles:
     - demo_vault
