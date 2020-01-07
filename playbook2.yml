@@ -10,4 +10,8 @@
       create: yes
     
   - name: run command
-    command: echo {{ demovar }} > /tmp/testtmp.txt 
+    command: echo "{{ demovar }}" > /tmp/testtmp.txt 
+
+  - name: show password
+    debug: 
+      msg: "{{ user_password }}"
