@@ -2,7 +2,7 @@
   become: yes
   vars_file:
     - ./vars.yml
-    - ./vars.yml
+    - ./vault.yml
   tasks:
     - debug:
         var: user_password
