@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  remote_user: root
+  become: true
+
+  roles:
+    - ansible-common-base

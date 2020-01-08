@@ -3,6 +3,5 @@
   vars_file:
     - ./vars.yml
     - ./vault.yml
-  tasks:
-    - debug:
-        var: user_password
+  roles:
+    - demo_vault

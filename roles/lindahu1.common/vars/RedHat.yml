@@ -1,0 +1,17 @@
+---
+sshd_service: sshd
+bashrc_path: '/etc/bashrc'
+common_pkgs:
+  - vim-enhanced
+  - curl
+  - wget
+  - gcc
+  - python
+  - python-devel
+  - python-setuptools
+  - openssl-devel
+  - libffi-devel
+  - sysstat
+  - sendmail
+  - mailx
+  - telnet
