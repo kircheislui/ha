@@ -1,16 +1,16 @@
 ---
-- name: manage httpd.conf
+- name: Create users
   hosts: all
   become: yes
   tasks:
-  - name: Copy Apache configuration file
-    copy:
-      src: httpd.conf
-      dest: /tmp/httpd.conf
-    notify:
-        - restart_apache
-  handlers:
-    - name: restart_apache
-      service:
-        name: httpd
-        state: restarted
+    - name: Ensure five users are present
+      user:
+        name: "{{ item }}"
+        state: present
+      loop:
+         - dev_user
+         - qa_user
+         - prod_user
+         - prod_user2
+         - prod_user3
+
