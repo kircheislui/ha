@@ -15,4 +15,4 @@
       service:
         name: httpd
         state: restart
-      when: httpd_results.changed
+      when: http_results.changed
