@@ -8,6 +8,6 @@
         name: "{{ item }}"
         state: present
       loop:
-        - - "{{ username }}" 
+        - "{{ username }}" 
 
 
