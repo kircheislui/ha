@@ -10,8 +10,9 @@
 
     - debug:
         var: http_results
-#    - name: Restart httpd 
-#      service:
-#        name: httpd
-#        state: restart
-#      when: httpd_results.changed
+
+    - name: Restart httpd 
+      service:
+        name: httpd
+        state: restart
+      when: httpd_results.changed
