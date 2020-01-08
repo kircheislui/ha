@@ -14,5 +14,5 @@
     - name: Restart httpd 
       service:
         name: httpd
-        state: restart
+        state: restarted
       when: http_results.changed == false
