@@ -3,14 +3,14 @@
   hosts: all
   become: yes
   tasks:
-    - name: Ensure five users are present
+    - name: Ensure three users are present
       user:
-        name: "{{ item }}"
+        name: "{{ item.username }}"
         state: present
+        groups: "{{ item.groups }}"
       loop:
-         - dev_user
-         - qa_user
-         - prod_user
-         - prod_user2
-         - prod_user3
+        - { username: 'dev_user', groups: 'ftp' }
+        - { username: 'qa_user', groups: 'ftp' }
+        - { username: 'prod_user', groups: 'apache' }
+
 
