@@ -1,5 +1,8 @@
 - hosts: all
   become: yes
+  vars_file:
+    - ./vars.yml
+    - ./vars.yml
   tasks:
     - debug:
         var: user_password
