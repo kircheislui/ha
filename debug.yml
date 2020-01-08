@@ -1,18 +1,16 @@
 ---
-- name: Output facts within a playbook
+- name: manage httpd.conf
   hosts: all
+  become: yes
   tasks:
-    - name: Ensure httpd package is present
-      yum:
-        name: httpd
-        state: latest
-      register: http_results
-
-    - debug:
-        var: http_results
-
-    - name: Restart httpd 
+  - name: Copy Apache configuration file
+    copy:
+      src: httpd.conf
+      dest: /tmp/httpd.conf
+    notify:
+        - restart_apache
+  handlers:
+    - name: restart_apache
       service:
         name: httpd
         state: restarted
-      when: http_results.changed == false
