@@ -7,7 +7,6 @@
       user:
         name: "{{ item }}"
         state: present
-      loop:
-        - "{{ username }}" 
+      loop: "{{ username }}" 
 
 
