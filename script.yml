@@ -1,4 +1,5 @@
 - hosts: all
   become: yes
   tasks:
-    - script: script/script.sh
+    - name: Run script in managed nodes
+      script: script/script.sh
