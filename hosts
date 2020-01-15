@@ -1,13 +1,9 @@
 [all:vars]
 ansible_user=ansible
-ansible_ssh_pass=password
 ansible_port=22
-ansible_become_password=password
 
 [webserver]
-node1 ansible_host=192.168.122.109
-node2 ansible_host=192.168.122.110
-node3 ansible_host=192.168.122.111
+node1 ansible_host=192.168.122.119
+node2 ansible_host=192.168.122.120
+node3 ansible_host=192.168.122.121
 
-[control]
-ansible ansible_host=192.168.122.99
