@@ -1,16 +1,14 @@
 ---
-- name: manage httpd.conf
-  hosts: web
+- name: Ensure users
+  hosts: node1
   become: yes
+
   tasks:
-  - name: Copy Apache configuration file
-    copy:
-      src: httpd.conf
-      dest: /etc/httpd/conf/
-    notify:
-        - restart_apache
-  handlers:
-    - name: restart_apache
-      service:
-        name: sshd
-        state: restarted
+    - name: Ensure three users are present
+      user:
+        name: "{{ item }}"
+        state: present
+      loop:
+         - dev_user
+         - qa_user
+         - prod_user
