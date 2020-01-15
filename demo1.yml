@@ -1,6 +1,6 @@
 ---
 - name: Ensure users
-  hosts: node1
+  hosts: web
   become: yes
 
   tasks:
