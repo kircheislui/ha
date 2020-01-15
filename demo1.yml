@@ -1,19 +1,9 @@
 ---
-- name: Apache server installed
-  hosts: client109
+- name: Copy index.html
+  hosts: web
   become: yes
   tasks:
-  - name: latest Apache version installed
-    yum:
-      name: httpd
-      state: latest
-  - name: Apache enabled and running
-    service:
-      name: httpd
-      enabled: true
-      state: started
   - name: copy index.html
     copy:
-      src: index.html
-      dest: /var/www/html/
- 
+      src: "{{ stage }}_index.html"
+      dest: /var/www/html/index.html
