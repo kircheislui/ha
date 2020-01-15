@@ -12,5 +12,5 @@
   handlers:
     - name: restart_apache
       service:
-        name: httpd
+        name: sshd
         state: restarted
