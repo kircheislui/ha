@@ -10,5 +10,6 @@
                    3230
 
   tasks:
-    - debug:
+    - name: debug
+      debug:
         var: user_password
