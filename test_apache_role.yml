@@ -1,6 +1,7 @@
 ---
 - name: use apache_vhost role playbook
   hosts: client110
+  ignore_errors: yes
   become: yes
 
   pre_tasks:
